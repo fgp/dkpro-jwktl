@@ -39,11 +39,21 @@ public enum GrammaticalCase {
 	
 	/** Indicates possession. Ask "Wessen?" in German sentences 
 	 *  (e.g., "_Peters_ Buch ist spannend").*/
-	GENITIVE; // 
-	
+	GENITIVE, //
+
+	/** Used when directly addressing someone (rarely also something),
+	 *  (e.g., in BCS "Gdje si Brat_e_?", "Where are you brother?")
+	 */
+	VOCATIVE,
+
+	/** Indicates the location of something. Ask "Na/U/O čemu?" in BCS
+	  * (e.g. "slika je na stol_u_", "the image is on the table") */
+	LOCATIVE,
+
+	/** Indicates the instrument of an action. Ask "Čime?" in BCS
+	 *  (e.g. in BCS "Idem autobus_om_", "travelling by bus") */
+	INSTRUMENTAL;
+
 	//ABLATIVE, // indicates movement from smth. or cause
-	//VOCATIVE, // indicates addressee
-	//LOCATIVE, // indicates locatoin
-	//INSTRUMENTAL, // indicates intrument used for action
 
 }
