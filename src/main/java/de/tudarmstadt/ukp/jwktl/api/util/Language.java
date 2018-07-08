@@ -104,7 +104,9 @@ public class Language implements ILanguage {
 	public static final ILanguage GERMAN = get("deu");
 	/** The Russian language. */
 	public static final ILanguage RUSSIAN = get("rus");
-	
+	/** The Bosnian/Croation/Serbian language (_h_rvatski/_b_osanski/_s_rpski jezik). */
+	public static final ILanguage BCS = get("hbs");
+
 	private static boolean initialized;
 	private static Map<String, ILanguage> languageIndex;
 	private static Map<String, String> additionalCodeIndex;
