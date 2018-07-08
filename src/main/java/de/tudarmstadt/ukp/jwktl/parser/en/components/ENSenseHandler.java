@@ -121,8 +121,11 @@ public class ENSenseHandler extends ENBlockHandler {
 	}
 
     private IWordFormHandler getWordFormHandler(ParsingContext context) {
+        String lemma = context.getPage().getTitle();
         if (Language.ENGLISH.equals(context.getLanguage())) {
-            return new ENWordFormHandler(context.getPage().getTitle());
+            return new ENWordFormHandler(lemma);
+        } else if (Language.BCS.equals(context.getLanguage())) {
+            return new ENWordFormHandlerBCS(lemma);
         } else {
             return new ENWordFormHandlerDefault();
         }
