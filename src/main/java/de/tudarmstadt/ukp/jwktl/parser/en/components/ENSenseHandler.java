@@ -124,7 +124,7 @@ public class ENSenseHandler extends ENBlockHandler {
         if (Language.ENGLISH.equals(context.getLanguage())) {
             return new ENWordFormHandler(context.getPage().getTitle());
         } else {
-            return new ENNonEngWordFormHandler();
+            return new ENWordFormHandlerDefault();
         }
     }
 

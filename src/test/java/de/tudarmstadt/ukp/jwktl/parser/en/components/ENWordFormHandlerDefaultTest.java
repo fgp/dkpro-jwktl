@@ -23,11 +23,11 @@ import static de.tudarmstadt.ukp.jwktl.api.util.GrammaticalGender.FEMININE;
 import static de.tudarmstadt.ukp.jwktl.api.util.GrammaticalGender.MASCULINE;
 import static de.tudarmstadt.ukp.jwktl.api.util.GrammaticalGender.NEUTER;
 
-public class ENNonEngWordFormHandlerTest extends WordFormHandlerTest {
+public class ENWordFormHandlerDefaultTest extends WordFormHandlerTest {
 	@Override
 	public void setUp() throws Exception {
 		super.setUp();
-		handler = new ENNonEngWordFormHandler();
+		handler = new ENWordFormHandlerDefault();
 	}
 
 	public void testHandleDeNoun() {
