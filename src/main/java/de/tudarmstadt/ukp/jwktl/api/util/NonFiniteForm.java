@@ -34,7 +34,24 @@ public enum NonFiniteForm {
 	
 	/** The participle form of a verb (e.g., "done"). Participle forms should
 	 *  be combined with a {@link GrammaticalTense}. */
-	PARTICIPLE;
+	PARTICIPLE,
+
+	/** Verbal adverb (e.g. "holding" in "they walk holding their hands").
+	 *  While in english (and german) these forms are often called present
+	 *  participle, for slavic languages (BCS in particular) it makes sense
+	 *  to separate them from participles because:
+	 *
+	 *  1. Their form is very different from that of participles (verbal
+	 *     adverbs are in formed in BCS by appending -ući or -vši)
+	 *  2. They are used with all verbs, not only auxillary verbs
+	 *  3. They are not associated with a particular tense.
+	 */
+	VERBALADVERB,
+
+	/** Verbal noun (e.g. in german forms ending in "-ung", in BCS forms
+	 *  ending in "-enje" or "-anje")
+	 */
+	VERBALNOUN;
 
 //	ATTRIBUTIVE,
 //	CONVERB,	
