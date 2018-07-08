@@ -27,6 +27,7 @@ import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalMood;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalNumber;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalPerson;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalTense;
+import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalGender;
 import de.tudarmstadt.ukp.jwktl.api.util.NonFiniteForm;
 
 /**
@@ -45,6 +46,7 @@ public class WiktionaryWordForm implements IWiktionaryWordForm {
 	protected GrammaticalMood grammaticalMood;
 	protected GrammaticalDegree grammaticalDegree;
 	protected GrammaticalAspect grammaticalAspect;
+	protected GrammaticalGender grammaticalGender;
 	protected NonFiniteForm nonFiniteForm;
 	
 	/** Instanciates a new, empty word form. */
@@ -126,7 +128,16 @@ public class WiktionaryWordForm implements IWiktionaryWordForm {
 	public void setAspect(final GrammaticalAspect grammaticalAspect) {
 		this.grammaticalAspect = grammaticalAspect;
 	}
-	
+
+	public GrammaticalGender getGender() {
+		return grammaticalGender;
+	}
+
+	/** Assign the given grammatical aspect to this word form. */
+	public void setGender(final GrammaticalGender grammaticalGender) {
+		this.grammaticalGender = grammaticalGender;
+	}
+
 	public NonFiniteForm getNonFiniteForm() {
 		return nonFiniteForm;
 	}
