@@ -24,6 +24,7 @@ import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalMood;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalNumber;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalPerson;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalTense;
+import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalGender;
 import de.tudarmstadt.ukp.jwktl.api.util.NonFiniteForm;
 
 /**
@@ -101,7 +102,11 @@ public interface IWiktionaryWordForm {
 	/** Returns the {@link GrammaticalAspect} of this word form or 
 	 *  <code>null</code> if no aspect is specified or applicable. */
 	GrammaticalAspect getAspect();
-	
+
+	/** Returns the {@link GrammaticalGender} of this word form or
+	 *  <code>null</code> if no aspect is specified or applicable. */
+	GrammaticalGender getGender();
+
 	/** Returns the {@link NonFiniteForm} type of this word form or 
 	 *  <code>null</code> if no type is specified or applicable. */
 	NonFiniteForm getNonFiniteForm();
