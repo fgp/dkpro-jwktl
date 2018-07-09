@@ -55,6 +55,7 @@ public class ENWordFormHandlerBCSTest extends ENWiktionaryEntryParserTest {
         assertEquals(GrammaticalAspect.PERFECT, entry.getAspect());
 
         Map<VerbFormKey, String> forms = new java.util.HashMap<VerbFormKey, String>();
+        assertNotNull(entry.getWordForms());
         for(IWiktionaryWordForm wordFormEntry: entry.getWordForms())
             forms.put(new VerbFormKey(wordFormEntry), wordFormEntry.getWordForm());
 
