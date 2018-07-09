@@ -466,6 +466,11 @@ public class ENWordFormHandler implements ITemplateHandler,
 	}
 
 	@Override
+	public List<GrammaticalAspect> getAspects() {
+		return null;
+	}
+
+	@Override
 	public String getRawHeadwordLine() {
 		return rawHeadwordLine;
 	}

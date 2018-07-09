@@ -19,6 +19,7 @@ package de.tudarmstadt.ukp.jwktl.api;
 
 import java.util.List;
 
+import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalAspect;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalGender;
 import de.tudarmstadt.ukp.jwktl.api.util.ILanguage;
 
@@ -124,6 +125,22 @@ public interface IWiktionaryEntry {
 	 *  (e.g., for the German "Liter"). If no gender is specified, the result
 	 *  will be null. */
 	List<GrammaticalGender> getGenders();
+
+	/** Returns the grammatical aspect of this lexical entry, which can
+	 *  be one of perfective or imperfecetive. If no aspect is specified,
+	 *  null is returned. In case of multiple aspects, this method will
+	 *  return only the first one - use {@link #getAspects()} to access
+	 *  aspects. Only relevent for slavic languages were verbs have a
+	 *  fixed aspect assigned to them */
+	GrammaticalAspect getAspect();
+
+	/** Returns the grammatical aspects of this lexical entry. Typically,
+	 *  this yields a list with a single entry (i.e., perfective or imperfect-
+	 *  ive). For exceptional cases, multiple genders may be associated
+	 *  (e.g., for the BCS verb "vid(j)eti"). If no aspect is specified, the
+	 *  result will be null. Only relevent for slavic languages were verbs
+	 *  have a fixed aspect assigned to them */
+	List<GrammaticalAspect> getAspects();
 
 	/** Returns the etymology of this lexical entry as a {@link IWikiString}.
 	 *  The result might be <code>null</code> if no etymology has been

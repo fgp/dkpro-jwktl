@@ -20,6 +20,7 @@ package de.tudarmstadt.ukp.jwktl.parser.en.components;
 import java.util.List;
 
 import de.tudarmstadt.ukp.jwktl.api.IWiktionaryWordForm;
+import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalAspect;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalGender;
 
 public interface IWordFormHandler {
@@ -42,6 +43,11 @@ public interface IWordFormHandler {
 	 * @return the extracted genders (might be null).
 	 */
 	List<GrammaticalGender> getGenders();
+
+	/**
+	 * @return the extracted aspects (might be null).
+	 */
+	List<GrammaticalAspect> getAspects();
 
 	/**
 	 * @return the unprocessed headline

@@ -31,6 +31,7 @@ import de.tudarmstadt.ukp.jwktl.api.entry.WiktionaryEntry;
 import de.tudarmstadt.ukp.jwktl.api.entry.WiktionaryExample;
 import de.tudarmstadt.ukp.jwktl.api.entry.WiktionaryRelation;
 import de.tudarmstadt.ukp.jwktl.api.entry.WiktionarySense;
+import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalAspect;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalGender;
 import de.tudarmstadt.ukp.jwktl.api.util.Language;
 import de.tudarmstadt.ukp.jwktl.api.util.TemplateParser;
@@ -245,6 +246,10 @@ public class ENSenseHandler extends ENBlockHandler {
 		List<GrammaticalGender> genders = wordFormHandler.getGenders();
 		if (genders != null)
 			genders.forEach(entry::addGender);
+
+		List<GrammaticalAspect> aspects = wordFormHandler.getAspects();
+		if (aspects != null)
+			aspects.forEach(entry::addAspect);
 	}
 
 	private boolean isNym(String line) {

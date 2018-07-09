@@ -35,6 +35,7 @@ import de.tudarmstadt.ukp.jwktl.api.IWiktionaryTranslation;
 import de.tudarmstadt.ukp.jwktl.api.IWiktionaryWordForm;
 import de.tudarmstadt.ukp.jwktl.api.PartOfSpeech;
 import de.tudarmstadt.ukp.jwktl.api.RelationType;
+import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalAspect;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalGender;
 import de.tudarmstadt.ukp.jwktl.api.util.ILanguage;
 import de.tudarmstadt.ukp.jwktl.api.util.Language;
@@ -58,6 +59,7 @@ public class WiktionaryEntry implements IWiktionaryEntry {
 	protected transient ILanguage wordLanguage;
 	protected List<PartOfSpeech> partsOfSpeech;
 	protected List<GrammaticalGender> genders;
+	protected List<GrammaticalAspect> aspects;
 	protected IWikiString etymology;
 	protected IWikiString usageNotes;
 	protected String entryLink;
@@ -190,6 +192,25 @@ public class WiktionaryEntry implements IWiktionaryEntry {
 			genders = new LinkedList<>();
 
 		genders.add(gender);
+	}
+
+	public GrammaticalAspect getAspect() {
+		if (aspects == null || aspects.isEmpty())
+			return null;
+
+		return aspects.get(0);
+	}
+
+	public List<GrammaticalAspect> getAspects() {
+		return aspects;
+	}
+
+	/** Adds the given grammatical aspect to the list of aspects. */
+	public void addAspect(final GrammaticalAspect aspect) {
+		if (aspects == null)
+			aspects = new LinkedList<>();
+
+		aspects.add(aspect);
 	}
 
 	public IWikiString getWordEtymology() {

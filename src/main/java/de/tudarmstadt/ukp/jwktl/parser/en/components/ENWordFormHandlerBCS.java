@@ -40,7 +40,8 @@ public class ENWordFormHandlerBCS implements IWordFormHandler,
 
     protected String lemma;
     protected List<IWiktionaryWordForm> wordForms;
-    protected GrammaticalGender gender;
+    protected List<GrammaticalGender> genders;
+    protected List<GrammaticalAspect> aspects;
     protected String rawHeadwordLine;
 
     public ENWordFormHandlerBCS(final String lemma) {
@@ -290,7 +291,12 @@ public class ENWordFormHandlerBCS implements IWordFormHandler,
 
     @Override
     public List<GrammaticalGender> getGenders() {
-        return Collections.singletonList(gender);
+        return genders;
+    }
+
+    @Override
+    public List<GrammaticalAspect> getAspects() {
+        return aspects;
     }
 
     @Override

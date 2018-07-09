@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 import de.tudarmstadt.ukp.jwktl.api.IWiktionaryWordForm;
+import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalAspect;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalGender;
 import de.tudarmstadt.ukp.jwktl.api.util.TemplateParser;
 import de.tudarmstadt.ukp.jwktl.api.util.TemplateParser.Template;
@@ -65,6 +66,11 @@ public class ENWordFormHandlerDefault implements IWordFormHandler,
 	@Override
 	public List<GrammaticalGender> getGenders() {
 		return genders;
+	}
+
+	@Override
+	public List<GrammaticalAspect> getAspects() {
+		return null;
 	}
 
 	@Override
