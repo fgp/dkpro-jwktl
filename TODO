@@ -1,0 +1,17 @@
+Split ENWordFormHandlerBCR into ENWordFormHandlerBCS and ENHeadwordHandlerBCS.
+Rename ENWordFormHandler to ENHeadwordHandlerEnglish and similarly ENWordFormHandlerDefault to ENHeadwordHandlerDefault.
+
+The idea being that handling the headword (e.g. {{sh-verb...}}) and handling
+the conjugations/declinations (e.g. {{sh-conj...}}) are really two very
+different things. The existing class names are miss-nomers, because so far it
+seems that all word forms where deduced from information in the headwor
+(which really is an "anglicism" -- this works for english where verbs only have
+very few distinc forms, but not for languages like BCS or spanish)
+
+ENSenseHandler then shouldn't need to bother about word forms at all anymore, which 
+will hopefully remove all the problems I had trying to get it to process information
+from multiple blocks.
+
+We probably STILL want WiktionaryEntryParser to collect multiple lines if a
+line starts with a partial template invocation (like '{{sh-conj', with the template
+parameters following on the next lines).
