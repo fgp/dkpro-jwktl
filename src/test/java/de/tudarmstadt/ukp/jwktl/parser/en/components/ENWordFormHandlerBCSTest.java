@@ -48,7 +48,7 @@ public class ENWordFormHandlerBCSTest extends ENWiktionaryEntryParserTest {
     }
 
     /***/
-    public void textProvjeriti() throws Exception {
+    public void testProvjeriti() throws Exception {
         IWiktionaryPage page = parse("provjeriti.txt");
         IWiktionaryEntry entry = page.getEntry(0);
         assertEquals(PartOfSpeech.VERB, entry.getPartOfSpeech());
