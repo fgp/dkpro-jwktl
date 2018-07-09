@@ -36,7 +36,7 @@ public class ENWordFormHandlerBCS implements IWordFormHandler,
         IHeadwordLineHandler,
         TemplateParser.ITemplateHandler {
 
-    private static final Logger logger = Logger.getLogger(ENWordFormHandler.class.getName());
+    private static final Logger logger = Logger.getLogger(ENWordFormHandlerBCS.class.getName());
 
     protected String lemma;
     protected List<IWiktionaryWordForm> wordForms;
