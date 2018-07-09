@@ -86,7 +86,7 @@ public class ENSenseHandler extends ENBlockHandler {
 	/**
 	 * Check if the label of section is a predefined POS label.
 	 */
-	public boolean canHandle(final String blockHeader) {
+	public boolean canHandle(final String blockHeader, ParsingContext context) {
 		partOfSpeech = null;
 		String posLabel = blockHeader.trim();
 		if (!posLabel.startsWith("===") || !posLabel.endsWith("==="))

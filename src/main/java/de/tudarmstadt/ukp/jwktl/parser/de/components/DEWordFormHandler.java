@@ -50,7 +50,7 @@ public class DEWordFormHandler extends DEBlockHandler {
 	protected List<IWiktionaryWordForm> wordForms;
 	protected TableType tableType;
 
-	public boolean canHandle(final String blockHeader) {
+	public boolean canHandle(final String blockHeader, ParsingContext context) {
 		if (blockHeader == null || blockHeader.isEmpty())
 			return false;
 		if (!blockHeader.startsWith("{{"))

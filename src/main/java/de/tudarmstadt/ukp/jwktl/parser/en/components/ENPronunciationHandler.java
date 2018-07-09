@@ -43,7 +43,7 @@ public class ENPronunciationHandler extends ENBlockHandler {
 
 	protected List<IPronunciation> pronunciations;
 
-	public boolean canHandle(String blockHeader) {
+	public boolean canHandle(String blockHeader, ParsingContext context) {
 		blockHeader = StringUtils.strip(blockHeader, "{}=: 1234567890").toLowerCase();
 		if ("pronunciation".equals(blockHeader) || "pronuncaition".equals(blockHeader)
 				|| "pronunceation".equals(blockHeader) || "pronunciaton".equals(blockHeader))

@@ -45,7 +45,7 @@ public class DEEntryLinkHandler extends DEBlockHandler {
 	}
 
 	@Override
-	public boolean canHandle(final String blockHeader) {
+	public boolean canHandle(final String blockHeader, ParsingContext context) {
 		if (blockHeader == null || blockHeader.isEmpty())
 			return false;
 		if (!blockHeader.startsWith("{{"))

@@ -28,7 +28,7 @@ public interface IBlockHandler {
 	
 	/** Return <code>true</code> if the handler requests to process the article
 	 *  constituent starting at the given line of text. */
-	boolean canHandle(final String blockHeader);
+	boolean canHandle(final String blockHeader, ParsingContext context);
 	
 	/** If the handler requested to process this constituent, this hotspot 
 	 *  will be called for processing the section header of this 

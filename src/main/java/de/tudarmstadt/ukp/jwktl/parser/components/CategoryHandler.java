@@ -41,7 +41,7 @@ public class CategoryHandler extends BlockHandler {
 			"\\[\\[:?" + categoryHead + ":([^\\]]+)\\]\\]");
 	}
 	
-	public boolean canHandle(String blockHeader) {
+	public boolean canHandle(String blockHeader, ParsingContext context) {
 		return blockHeader != null && categoryPattern.matcher(blockHeader).find();
 	}
 	

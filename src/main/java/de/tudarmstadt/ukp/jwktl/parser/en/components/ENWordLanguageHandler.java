@@ -36,7 +36,7 @@ public class ENWordLanguageHandler extends ENBlockHandler implements IBlockHandl
 	
 	protected ILanguage language;
 	
-	public boolean canHandle(String blockHeader) {
+	public boolean canHandle(String blockHeader, ParsingContext context) {
 		if ("----".equals(blockHeader)) {
 			language = null;
 			return true;

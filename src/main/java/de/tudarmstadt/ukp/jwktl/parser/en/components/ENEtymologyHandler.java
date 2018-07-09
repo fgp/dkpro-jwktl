@@ -35,7 +35,7 @@ public class ENEtymologyHandler extends ENBlockHandler {
 			"eytomology", "etmology", "eymology");
 	protected StringBuffer contentBuffer;
 
-	public boolean canHandle(String blockHeader) {
+	public boolean canHandle(String blockHeader, ParsingContext context) {
 		return SPELLINGS.contains(StringUtils.strip(blockHeader, "{}=: 1234567890").toLowerCase());
 	}
 	

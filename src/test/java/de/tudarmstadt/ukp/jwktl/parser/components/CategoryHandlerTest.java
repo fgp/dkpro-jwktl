@@ -48,32 +48,32 @@ public class CategoryHandlerTest {
 
 	@Test
 	public void testCanHandleNoMatch() throws Exception {
-		assertFalse(categoryHandler.canHandle("XXX"));
+		assertFalse(categoryHandler.canHandle("XXX", null));
 	}
 
 	@Test
 	public void testCanHandleMatchSingleLine() throws Exception {
-		assertTrue(categoryHandler.canHandle(CATEGORY_FOO));
+		assertTrue(categoryHandler.canHandle(CATEGORY_FOO, null));
 	}
 
 	@Test
 	public void testCanHandleMatchTrailingWhitespace() throws Exception {
-		assertTrue(categoryHandler.canHandle(CATEGORY_FOO+"    "));
+		assertTrue(categoryHandler.canHandle(CATEGORY_FOO+"    ", null));
 	}
 
 	@Test
 	public void testCanHandleMatchLeadingWhitespace() throws Exception {
-		assertTrue(categoryHandler.canHandle("   "+CATEGORY_FOO));
+		assertTrue(categoryHandler.canHandle("   "+CATEGORY_FOO, null));
 	}
 
 	@Test
 	public void testCanHandleMatchEmptyString() throws Exception {
-		assertFalse(categoryHandler.canHandle(""));
+		assertFalse(categoryHandler.canHandle("", null));
 	}
 
 	@Test
 	public void testCanHandleMatchNull() throws Exception {
-		assertFalse(categoryHandler.canHandle(null));
+		assertFalse(categoryHandler.canHandle(null, null));
 	}
 
 	@Test(expected = IllegalStateException.class)

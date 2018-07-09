@@ -46,7 +46,7 @@ public class DEPartOfSpeechHandler extends DEBlockHandler {
 
 	/** Check if the given text contains a part of speech header.
 	 */
-	public boolean canHandle(String blockHeader) {
+	public boolean canHandle(String blockHeader, ParsingContext context) {
 		if (blockHeader == null || blockHeader.isEmpty())
 			return false;
 

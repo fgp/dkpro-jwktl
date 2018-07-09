@@ -113,7 +113,7 @@ public abstract class WiktionaryEntryParser implements IWiktionaryEntryParser {
 			if (status == ParseStatus.IN_HEAD) {
 				// HEAD
 				if (isStartOfBlock(currentLine)) {
-					handler = selectHandler(currentLine);
+					handler = selectHandler(currentLine, context);
 					logger.fine("preprocessing " + currentLine + " worker is " + handler);
 				}
 				
@@ -221,9 +221,9 @@ public abstract class WiktionaryEntryParser implements IWiktionaryEntryParser {
 	protected abstract boolean isStartOfBlock(final String line);
 
 	/** Find a handler that is willing to handle the given line. */
-	protected IBlockHandler selectHandler(final String line) {
+	protected IBlockHandler selectHandler(final String line, final ParsingContext context) {
 		for (IBlockHandler handler : handlers) {
-			if (handler.canHandle(line))
+			if (handler.canHandle(line, context))
 				return handler;
 		}
 		return null;

@@ -42,7 +42,7 @@ public abstract class BlockHandler implements IBlockHandler {
 		this.labels = labels;
 	}
 	
-	public boolean canHandle(String blockHeader) {
+	public boolean canHandle(String blockHeader, ParsingContext context) {
 		blockHeader = StringUtils.strip(blockHeader, "{}=: ");
 		for (String label : labels)
 			if (label.equals(blockHeader))

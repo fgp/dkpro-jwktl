@@ -41,7 +41,7 @@ public class DEWordLanguageHandler extends DEBlockHandler {
 	/** Determine if the text line contains the language pattern. If the 
 	 *  language pattern is found, the entry's word and its language will 
 	 *  be extracted from the text line. */
-	public boolean canHandle(final String blockHeader) {
+	public boolean canHandle(final String blockHeader, ParsingContext context) {
 		if (blockHeader == null)
 			return false;
 		

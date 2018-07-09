@@ -38,7 +38,7 @@ public class InterwikiLinkHandler extends BlockHandler {
 		this.categoryHead = categoryHead;
 	}
 
-	public boolean canHandle(String blockHeader) {
+	public boolean canHandle(String blockHeader, ParsingContext context) {
 		// Check if the line encodes an interwiki link.
 		String line = blockHeader.trim();
 		boolean isBracketed = line.startsWith("[[") && line.endsWith("]]");		
