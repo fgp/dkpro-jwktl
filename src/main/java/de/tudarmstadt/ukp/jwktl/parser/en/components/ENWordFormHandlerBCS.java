@@ -110,8 +110,8 @@ public class ENWordFormHandlerBCS implements IWordFormHandler,
                     switch(p[1]) {
                         case "va": verbform.setNonFiniteForm(NonFiniteForm.VERBALADVERB); break;
                         default:
-                            if (!decodeGrammaticalNumber(verbform, p[1].charAt(0)) ||
-                                !decodeGrammaticalPerson(verbform, p[1].charAt(1)))
+                            if (!decodeGrammaticalPerson(verbform, p[1].charAt(0)) ||
+                                !decodeGrammaticalNumber(verbform, p[1].charAt(1)))
                             {
                                 logger.warning(String.format("Unknown verb conjugation parameter %s", p_raw));
                                 verbform = null;
@@ -130,8 +130,8 @@ public class ENWordFormHandlerBCS implements IWordFormHandler,
                      */
                     verbform.setTense(GrammaticalTense.PAST);
                     verbform.setAspect(GrammaticalAspect.PERFECT);
-                    if (!decodeGrammaticalNumber(verbform, p[1].charAt(0)) ||
-                            !decodeGrammaticalPerson(verbform, p[1].charAt(1)))
+                    if (!decodeGrammaticalPerson(verbform, p[1].charAt(0)) ||
+                        !decodeGrammaticalNumber(verbform, p[1].charAt(1)))
                     {
                         logger.warning(String.format("Unknown verb conjugation parameter %s", p_raw));
                         verbform = null;
@@ -147,8 +147,8 @@ public class ENWordFormHandlerBCS implements IWordFormHandler,
                      */
                     verbform.setTense(GrammaticalTense.PAST);
                     verbform.setAspect(GrammaticalAspect.IMPERFECT);
-                    if (!decodeGrammaticalNumber(verbform, p[1].charAt(0)) ||
-                            !decodeGrammaticalPerson(verbform, p[1].charAt(1)))
+                    if (!decodeGrammaticalPerson(verbform, p[1].charAt(0)) ||
+                        !decodeGrammaticalNumber(verbform, p[1].charAt(1)))
                     {
                         logger.warning(String.format("Unknown verb conjugation parameter %s", p_raw));
                         verbform = null;
