@@ -32,7 +32,7 @@ import de.tudarmstadt.ukp.jwktl.api.util.TemplateParser.Template;
 /**
  * Support for parsing word forms for non-English entries in the English Wiktionary.
  */
-public class ENWordFormHandlerDefault implements IWordFormHandler,
+public class ENNonEngWordFormHandler implements IWordFormHandler,
 		IHeadwordLineHandler,
 		TemplateParser.ITemplateHandler {
 

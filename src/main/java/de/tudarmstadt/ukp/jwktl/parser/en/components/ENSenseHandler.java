@@ -128,7 +128,7 @@ public class ENSenseHandler extends ENBlockHandler {
         } else if (Language.BCS.equals(context.getLanguage())) {
             return new ENWordFormHandlerBCS(lemma);
         } else {
-            return new ENWordFormHandlerDefault();
+            return new ENNonEngWordFormHandler();
         }
     }
 
