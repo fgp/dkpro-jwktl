@@ -1,0 +1,290 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10" xml:lang="en">
+  <siteinfo>
+    <sitename>Wiktionary</sitename>
+    <dbname>enwiktionary</dbname>
+    <base>https://en.wiktionary.org/wiki/Wiktionary:Main_Page</base>
+    <generator>MediaWiki 1.32.0-wmf.10</generator>
+    <case>case-sensitive</case>
+    <namespaces>
+      <namespace key="-2" case="case-sensitive">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="case-sensitive" />
+      <namespace key="1" case="case-sensitive">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="case-sensitive">Wiktionary</namespace>
+      <namespace key="5" case="case-sensitive">Wiktionary talk</namespace>
+      <namespace key="6" case="case-sensitive">File</namespace>
+      <namespace key="7" case="case-sensitive">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="case-sensitive">Template</namespace>
+      <namespace key="11" case="case-sensitive">Template talk</namespace>
+      <namespace key="12" case="case-sensitive">Help</namespace>
+      <namespace key="13" case="case-sensitive">Help talk</namespace>
+      <namespace key="14" case="case-sensitive">Category</namespace>
+      <namespace key="15" case="case-sensitive">Category talk</namespace>
+      <namespace key="90" case="case-sensitive">Thread</namespace>
+      <namespace key="91" case="case-sensitive">Thread talk</namespace>
+      <namespace key="92" case="case-sensitive">Summary</namespace>
+      <namespace key="93" case="case-sensitive">Summary talk</namespace>
+      <namespace key="100" case="case-sensitive">Appendix</namespace>
+      <namespace key="101" case="case-sensitive">Appendix talk</namespace>
+      <namespace key="102" case="case-sensitive">Concordance</namespace>
+      <namespace key="103" case="case-sensitive">Concordance talk</namespace>
+      <namespace key="104" case="case-sensitive">Index</namespace>
+      <namespace key="105" case="case-sensitive">Index talk</namespace>
+      <namespace key="106" case="case-sensitive">Rhymes</namespace>
+      <namespace key="107" case="case-sensitive">Rhymes talk</namespace>
+      <namespace key="108" case="case-sensitive">Transwiki</namespace>
+      <namespace key="109" case="case-sensitive">Transwiki talk</namespace>
+      <namespace key="110" case="case-sensitive">Thesaurus</namespace>
+      <namespace key="111" case="case-sensitive">Thesaurus talk</namespace>
+      <namespace key="114" case="case-sensitive">Citations</namespace>
+      <namespace key="115" case="case-sensitive">Citations talk</namespace>
+      <namespace key="116" case="case-sensitive">Sign gloss</namespace>
+      <namespace key="117" case="case-sensitive">Sign gloss talk</namespace>
+      <namespace key="118" case="case-sensitive">Reconstruction</namespace>
+      <namespace key="119" case="case-sensitive">Reconstruction talk</namespace>
+      <namespace key="828" case="case-sensitive">Module</namespace>
+      <namespace key="829" case="case-sensitive">Module talk</namespace>
+      <namespace key="2300" case="case-sensitive">Gadget</namespace>
+      <namespace key="2301" case="case-sensitive">Gadget talk</namespace>
+      <namespace key="2302" case="case-sensitive">Gadget definition</namespace>
+      <namespace key="2303" case="case-sensitive">Gadget definition talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>duh</title>
+    <ns>0</ns>
+    <id>216034</id>
+    <revision>
+      <id>49345976</id>
+      <parentid>49345920</parentid>
+      <timestamp>2018-04-17T23:53:39Z</timestamp>
+      <contributor>
+        <username>Suzukaze-c</username>
+        <id>522410</id>
+      </contributor>
+      <comment>/* Pronunciation */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve" bytes="4168">{{also|düh}}
+==English==
+
+===Alternative forms===
+* {{l|en|der}}, {{l|en|derr}}
+* {{l|en|dur}}, {{l|en|durr}}
+
+===Pronunciation===
+* {{a|US}} {{IPA|/dʌ/|lang=en}}
+* {{a|Australia}} {{IPA|/dʌ/|lang=en}}
+* {{a|US}} {{audio|en-us-duh.ogg|Audio|lang=en}}
+* {{a|UK}} {{IPA|/dɜː/|lang=en}}
+* {{rhymes|ʌ|lang=en}}
+
+===Interjection===
+{{en-interj}}
+
+# {{non-gloss definition|Disdainful indication that something is [[obvious]].}}
+#: ''It's hot in the desert. - Well, '''duh!'''''
+# {{non-gloss definition|Indication of mock [[stupidity]].}}
+#: '' '''Duhhh''', I'm Jasmine, I can't even tie my shoe laces right! ''
+
+====Synonyms====
+* {{l|en|obviously}}!
+* {{l|en|doy}}
+* {{l|en|no duh}} (''Australian'', ''American'')
+* {{l|en|no shit}}
+* {{l|en|you don't say}}
+* {{l|en|no kidding}}
+* {{l|en|derp}}
+* {{l|en|seriously? Nah}} (sarcastic)
+
+====Antonyms====
+* {{l|en|really}}?
+
+====Related terms====
+* {{l|en|d'oh}}
+* {{l|en|huh}}
+* {{l|en|oh}}
+* {{l|en|ah}}
+
+====Translations====
+{{trans-top|Disdainful indication that something is obvious.}}
+* Armenian: {{t|hy|հա բա}}
+* Chinese:
+*: Cantonese: {{t|yue|擺明系啦|sc=Hani}}
+*: Mandarin: {{t|cmn|很明顯吧|sc=Hani}}
+* Czech: {{t|cs|jak jinak}}
+* Dutch: {{t|nl|je meent het}}
+* French: {{t+|fr|bah}}
+{{trans-mid}}
+* German: (''after a question:'') {{t|de|ja klar}} ''with a squeaking tone on the second word''; (''after a statement:'') {{t+|de|ach}}; {{t|de|ach nee}}; {{t|de|ach was}}; {{t|de|na sowas}}; {{t+|de|sag bloß}} ''all with an interrogative intonation''
+* Italian: {{t|it|ma va?}}
+* Japanese: {{t+|ja|当たり前|sc=Jpan}}
+* Korean: {{t+|ko|당연}}
+* Portuguese: {{t+|pt|ah}}, {{t|pt|dã}}
+* Russian: {{t+|ru|а то|tr=}}, {{t+|ru|ещё бы|tr=}}, {{qualifier|informal|colloquial}} {{t+|ru|я́сен пень|tr=}}
+* Slovak: {{t|sk|nehovor}}
+{{trans-bottom}}
+
+===Anagrams===
+* {{anagrams|en|HUD|Hud|UHD|hud}}
+
+----
+
+==Pennsylvania German==
+
+===Etymology===
+Compare {{cog|de|tun}}, {{cog|nl|doen}}, {{cog|en|do}}.
+
+===Verb===
+{{head|pdc|verb}}
+
+# to [[do]]
+
+====Conjugation====
+
+&lt;div class="NavFrame" style="width: 42em;"&gt;
+&lt;div class="NavHead"&gt;Conjugation of ''{{PAGENAME}}''&lt;/div&gt;
+&lt;div class="NavContent"&gt;
+{| style="width:100%; margin: 0px;" class="wikitable inflection-table"
+|-
+! [[infinitive]]
+| colspan="2" | {{PAGENAME}}
+|-
+|
+|-
+! [[past participle]]
+| hot ge{{PAGENAME}}
+|-
+| colspan="2" |
+|-
+! [[future tense]]
+| waerd {{PAGENAME}}
+|- 
+| colspan="2" |
+|-
+! || [[present&amp;nbsp;tense]]
+|-
+! [[first-person|1st&amp;nbsp;person]]&amp;nbsp;[[singular]]
+| duh
+|-
+! [[second-person|2nd&amp;nbsp;person]]&amp;nbsp;[[singular]]
+| duscht
+|-
+! [[third-person|3rd&amp;nbsp;person]]&amp;nbsp;[[singular]]
+| dutt
+|-
+! [[first-person|1st&amp;nbsp;person]]&amp;nbsp; [[plural]]
+| {{PAGENAME}}ne
+|-
+! [[second-person|2nd&amp;nbsp;person]]&amp;nbsp;[[plural]]
+| {{PAGENAME}}net
+|-
+! [[third-person|3rd&amp;nbsp;person]]&amp;nbsp;[[plural]]
+| {{PAGENAME}}ne
+|-
+| colspan="2" |
+|-
+! [[imperative]]
+| {{PAGENAME}}
+|}&lt;/div&gt;&lt;/div&gt;
+
+----
+
+==Romanian==
+
+===Etymology===
+Ultimately from {{der|ro|sla-pro|*duxъ}}.
+
+===Noun===
+{{ro-noun|n|duhuri}}
+
+# [[spirit]]
+# [[ghost]]
+
+====Declension====
+{{ro-noun-n|pl=duhuri|def=duhul}}
+
+====Synonyms====
+* {{sense|spirit}} [[spirit]], [[suflet]]
+* {{sense|ghost}} [[fantomă]], [[stafie]], [[nălucă]]
+
+====Derived terms====
+* [[Duhul Sfânt]]
+
+----
+
+==Serbo-Croatian==
+
+===Etymology===
+From {{inh|sh|sla-pro|*duxъ}}.
+
+===Pronunciation===
+* {{IPA|/dûx/|lang=sh}}
+
+===Noun===
+{{sh-noun|g=m|head=dȕh}}
+
+# [[ghost]]
+# [[spirit]]
+
+====Declension====
+{{sh-decl-noun
+|dȕh|dùhovi / dȕsi
+|duha|dùhōvā
+|duhu|dùhovima / dȕsima
+|duha|dùhove
+|dȕše|dùhovi / dȕsi
+|duhu|dùhovima / dȕsima
+|duhom|dùhovima / dȕsima
+}}
+
+====Related terms====
+* {{l|sh|dúša}}
+
+----
+
+==Shabo==
+
+===Noun===
+{{head|sbf|nouns}}
+
+# [[breast]]
+
+----
+
+==Slovene==
+
+===Etymology===
+From {{inh|sl|sla-pro|*duxъ}}.
+
+===Pronunciation===
+* {{IPA|lang=sl|/ˈdúːx/}}
+* {{sl-tonal|dȗh}}
+
+===Noun===
+{{sl-noun|dúh|m-an|duhá|duhôvi}}
+
+# [[ghost]] (spirit appearing after death)
+
+====Declension====
+{{sl-decl-noun-m-ov|dúh||á|a=1}}
+
+----
+
+==Zhuang==
+
+===Pronunciation===
+* {{za-pron}}
+
+===Noun===
+{{za-head|noun}}
+
+# [[bean]]; [[pea]]; [[nut]]</text>
+      <sha1>iqal5gvqdekh6yfejufamidgx5qaru7</sha1>
+    </revision>
+  </page>
+</mediawiki>

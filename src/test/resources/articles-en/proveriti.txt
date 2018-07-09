@@ -1,0 +1,52 @@
+==Serbo-Croatian==
+
+===Alternative forms===
+* (''Ijekavian''): {{l|sh|pròvjeriti}}
+
+===Pronunciation===
+* {{IPA|/prǒʋeriti/|lang=sh}}
+* {{hyphenation|pro|ve|ri|ti|lang=sh}}
+
+===Verb===
+{{sh-verb|head=pròveriti|a=pf}}
+
+# {{lb|sh|ambitransitive}} to [[check]], [[confirm]]
+# {{lb|sh|transitive}} to [[test]], [[question]]
+# {{lb|sh|transitive}} to [[clear]], provide with a [[clearance]]
+
+====Conjugation====
+{{sh-conj
+|p.va=pròverīvši
+|pr.1s=proverim
+|pr.2s=proveriš
+|pr.3s=proveri
+|pr.1p=proverimo
+|pr.2p=proverite
+|pr.3p=provere
+|f1.hr=proverit
+|f1.stem=proveri
+|a.1s=proverih
+|a.2s=proveri
+|a.3s=proveri
+|a.1p=proverismo
+|a.2p=proveriste
+|a.3p=proveriše
+|impt.2s=proveri
+|impt.1p=proverimo
+|impt.2p=proverite
+|app.ms=proverio
+|app.fs=proverila
+|app.ns=proverilo
+|app.mp=proverili
+|app.fp=proverile
+|app.np=proverila
+|ppp.ms=proveren
+|ppp.fs=proverena
+|ppp.ns=provereno
+|ppp.mp=provereni
+|ppp.fp=proverene
+|ppp.np=proverena
+}}
+
+====Related terms====
+* {{l|sh|proverávati|g=impf}}

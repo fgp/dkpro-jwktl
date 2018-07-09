@@ -1,0 +1,22 @@
+==Serbo-Croatian==
+
+===Alternative forms===
+* {{qualifier|Ekavian}}: {{l|sh|véran}}
+
+===Etymology===
+From {{m|sh|vjȅra}}.
+
+===Pronunciation===
+* {{IPA|/ʋjěːran/|lang=sh}}
+* {{hyphenation|vje|ran|lang=sh}}
+
+===Adjective===
+{{sh-adj|head=vjéran|def=vjȇrnī|comp=vjerniji}}
+
+# [[faithful]], [[loyal]]
+
+====Declension====
+{{sh-adj-full|vjern|o|vjernij|e}}
+
+===References===
+* {{R:sh:HJP|f19vWxh%2F}}

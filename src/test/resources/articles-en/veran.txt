@@ -1,0 +1,53 @@
+{{also|verán}}
+==Esperanto==
+
+===Adjective===
+{{eo-head}}
+
+# {{eo-form of|ver|an}}
+
+----
+
+==Finnish==
+
+===Noun===
+{{head|fi|noun form}}
+
+# {{fi-form of|case=genitive|pl=singular|verka}}
+
+===Anagrams===
+* {{anagrams|fi|Verna|arven|revan}}
+
+----
+
+==Icelandic==
+
+===Noun===
+{{is-noun form}}
+
+# {{is-inflection of|vera|def|nom|s}}
+
+----
+
+==Serbo-Croatian==
+
+===Alternative forms===
+* {{qualifier|Ijekavian}}: {{l|sh|vjéran}}
+
+===Etymology===
+From {{m|sh|vȅra}}.
+
+===Pronunciation===
+* {{IPA|/ʋěːran/|lang=sh}}
+* {{hyphenation|ve|ran|lang=sh}}
+
+===Adjective===
+{{sh-adj|head=vjéran|def=vjȇrnī|comp=vjerniji}}
+
+# [[faithful]], [[loyal]]
+
+====Declension====
+{{sh-adj-full|vern|o|vernij|e}}
+
+===References===
+* {{R:sh:HJP|f19vWxh%2F}}
