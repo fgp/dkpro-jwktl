@@ -24,6 +24,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 import de.tudarmstadt.ukp.jwktl.api.IWiktionaryEntry;
 import de.tudarmstadt.ukp.jwktl.api.IWiktionarySense;
@@ -59,7 +60,9 @@ public abstract class WiktionaryEntryParser implements IWiktionaryEntryParser {
 	protected static final Pattern COMMENT_PATTERN = Pattern.compile("\\<!--((?!--\\>)[^\0])*?--\\>");
 	protected static final Pattern IMAGE_PATTERN = Pattern.compile("\\[\\[Image:([^\\]]+?)\\|[^\\]]+?\\]\\]");
 	protected static final Pattern REFERENCES_PATTERN = Pattern.compile("<ref[^>]*>.+?</ref>");
-	
+	protected static final Pattern TEMPLATE_START_PATTERN = Pattern.compile("\\{\\{");
+	protected static final Pattern TEMPLATE_END_PATTERN = Pattern.compile("\\}\\}");
+
 	protected ILanguage language;
 	protected String redirectTemplate;
 	protected long entryId;
@@ -96,63 +99,86 @@ public abstract class WiktionaryEntryParser implements IWiktionaryEntryParser {
 		
 		// contains information shared by workers. 
 		ParsingContext context = createParsingContext(page);
-		String line = reader.readLine();
+		String currentLine = reader.readLine();
 		IBlockHandler handler = null;
 		IBlockHandler unfinishedHandler = null;
 		ParseStatus status = ParseStatus.IN_HEAD;
 		
 		// Decides if parser take control of the parsing or let a worker object decide if its work is finished.
 		boolean parserTakeControl = false;
-		boolean EOT = (line == null);
+		boolean EOT = (currentLine == null);
 		while (!EOT) {
-			line = line.trim();
-			String lineSep = line + LINE_SEPERATOR;
+			currentLine = currentLine.trim();
+			String bufferedLinesSep = currentLine + LINE_SEPERATOR;
 			if (status == ParseStatus.IN_HEAD) {
 				// HEAD
-				if (isStartOfBlock(line)) {
-					handler = selectHandler(line);
-					logger.fine("preprocessing " + line + " worker is " + handler);
+				if (isStartOfBlock(currentLine)) {
+					handler = selectHandler(currentLine);
+					logger.fine("preprocessing " + currentLine + " worker is " + handler);
 				}
 				
 				// continue only when the worker finishes processing head part.
-				if (handler != null && handler.processHead(lineSep, context)){
-					logger.fine("processing " + line);
+				if (handler != null && handler.processHead(bufferedLinesSep, context)){
+					logger.fine("processing " + currentLine);
 					status = ParseStatus.IN_BODY;
 					unfinishedHandler = handler;
 				}
-				line = reader.readLine();
+				currentLine = reader.readLine();
 				
 			} else 
 			if (status == ParseStatus.IN_BODY) {
+				/* If a template reference is split over multiple lines, keep accumulating
+				 * text in {@currentLine} until the reference is completed.
+				 */
+				int incomplete_templates = 0;
+				boolean fetch_next_line = false;
+				do {
+					if (fetch_next_line) {
+						logger.fine(String.format("%d incomplete templates, buffering '%s'",
+								incomplete_templates, currentLine));
+						currentLine = reader.readLine();
+						if (currentLine == null)
+							break;
+						bufferedLinesSep = bufferedLinesSep + currentLine + LINE_SEPERATOR;
+					}
+					incomplete_templates += countMatches(TEMPLATE_START_PATTERN, currentLine);
+					incomplete_templates -= countMatches(TEMPLATE_END_PATTERN, currentLine);
+					if (incomplete_templates < 0) {
+						logger.warning(String.format("Too many '}}' on page %s", page.getTitle()));
+						incomplete_templates = 0;
+					}
+					fetch_next_line = true;
+				} while (incomplete_templates != 0);
+
 				// BODY
 				if (!parserTakeControl) {						
-					parserTakeControl = !handler.processBody(lineSep, context);
+					parserTakeControl = !handler.processBody(bufferedLinesSep, context);
 					if (parserTakeControl) {
-						if (isStartOfBlock(line)) {
+						if (isStartOfBlock(bufferedLinesSep)) {
 							handler.fillContent(context);
 							unfinishedHandler = null;								
 							handler = null;
 							status = ParseStatus.IN_HEAD;
 							parserTakeControl = false;
 						} else
-							line = reader.readLine();
+							currentLine = reader.readLine();
 					} else
-						line = reader.readLine();
+						currentLine = reader.readLine();
 				} else {						
-					if (isStartOfBlock(line)) {
+					if (isStartOfBlock(currentLine)) {
 						handler.fillContent(context);
 						unfinishedHandler = null;
 						handler = null;
 						status = ParseStatus.IN_HEAD;
 						parserTakeControl = false;
 					} else {
-						handler.processBody(lineSep, context);
-						line = reader.readLine();
+						handler.processBody(bufferedLinesSep, context);
+						currentLine = reader.readLine();
 					}
 				}
 			}
 			
-			if (line == null) {
+			if (currentLine == null) {
 				if (unfinishedHandler != null)
 					unfinishedHandler.fillContent(context);
 				EOT = true;
@@ -179,6 +205,14 @@ public abstract class WiktionaryEntryParser implements IWiktionaryEntryParser {
 			return true;
 		} else
 			return false;
+	}
+
+	protected int countMatches(Pattern pattern, String string) {
+		Matcher m = pattern.matcher(string);
+		int count = 0;
+		while (m.find())
+			count++;
+		return count;
 	}
 
 	/** Hotspot for deciding if the given line is a potential start of a new
