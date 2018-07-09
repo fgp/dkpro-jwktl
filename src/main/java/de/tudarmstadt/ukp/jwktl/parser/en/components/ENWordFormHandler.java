@@ -29,6 +29,7 @@ import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalGender;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalNumber;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalPerson;
 import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalTense;
+import de.tudarmstadt.ukp.jwktl.api.util.GrammaticalAspect;
 import de.tudarmstadt.ukp.jwktl.api.util.NonFiniteForm;
 import de.tudarmstadt.ukp.jwktl.api.util.TemplateParser;
 import de.tudarmstadt.ukp.jwktl.api.util.TemplateParser.ITemplateHandler;
