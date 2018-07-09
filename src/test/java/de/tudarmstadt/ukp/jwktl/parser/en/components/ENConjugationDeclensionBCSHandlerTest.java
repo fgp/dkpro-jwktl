@@ -10,10 +10,10 @@ import de.tudarmstadt.ukp.jwktl.parser.en.ENWiktionaryEntryParserTest;
 import java.util.Map;
 
 /**
- * Test case for {@link ENWordFormHandlerBCS}.
+ * Test case for {@link ENConjugationDeclensionBCSHandler}.
  * @author Florian G. Pflug
  */
-public class ENWordFormHandlerBCSTest extends ENWiktionaryEntryParserTest {
+public class ENConjugationDeclensionBCSHandlerTest extends ENWiktionaryEntryParserTest {
     static class VerbFormKey {
         public NonFiniteForm nonFiniteForm;
         public GrammaticalTense tense;

@@ -21,9 +21,9 @@ import de.tudarmstadt.ukp.jwktl.api.IWiktionaryWordForm;
 import de.tudarmstadt.ukp.jwktl.api.entry.WiktionaryWordForm;
 import de.tudarmstadt.ukp.jwktl.api.util.*;
 import de.tudarmstadt.ukp.jwktl.api.util.TemplateParser.Template;
+import de.tudarmstadt.ukp.jwktl.parser.util.ParsingContext;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -32,21 +32,27 @@ import java.util.logging.Logger;
 /**
  * Support for parsing word forms for non-English entries in the English Wiktionary.
  */
-public class ENWordFormHandlerBCS implements IWordFormHandler,
-        IHeadwordLineHandler,
-        TemplateParser.ITemplateHandler {
+public class ENConjugationDeclensionBCSHandler extends ENBlockHandler implements TemplateParser.ITemplateHandler {
 
-    private static final Logger logger = Logger.getLogger(ENWordFormHandlerBCS.class.getName());
+    private static final Logger logger = Logger.getLogger(ENConjugationDeclensionBCSHandler.class.getName());
 
-    protected String lemma;
     protected List<IWiktionaryWordForm> wordForms;
-    protected List<GrammaticalGender> genders;
-    protected List<GrammaticalAspect> aspects;
-    protected String rawHeadwordLine;
 
-    public ENWordFormHandlerBCS(final String lemma) {
-        this.lemma = lemma;
-        wordForms = new ArrayList<>();
+    public ENConjugationDeclensionBCSHandler() {
+        super("Conjugation", "Declension");
+    }
+
+    @Override
+    public boolean processHead(String textLine, ParsingContext context) {
+        wordForms = new ArrayList<IWiktionaryWordForm>();
+        return true;
+    }
+
+    @Override
+    public boolean processBody(String textLine, ParsingContext context) {
+        if (textLine.startsWith("{{sh-"))
+            TemplateParser.parse(textLine, this);
+        return true;
     }
 
     public String handle(final Template template) {
@@ -82,7 +88,7 @@ public class ENWordFormHandlerBCS implements IWordFormHandler,
             for(GrammaticalNumber n: numbers) {
                 String w = template.getNumberedParam(p++);
                 if (w == null) {
-                    logger.warning(String.format("Missing entry number %d for %s:", p, lemma));
+                    logger.warning(String.format("Missing entry number %d", p));
 
                 }
                 WiktionaryWordForm nounform = new WiktionaryWordForm(w);
@@ -266,41 +272,5 @@ public class ENWordFormHandlerBCS implements IWordFormHandler,
             default:
                 return false;
         }
-    }
-
-    @Override
-    public boolean parse(final String line) {
-        if (rawHeadwordLine != null) {
-            return false; // already done
-        } else if (line.startsWith("{{sh-")) {
-            rawHeadwordLine = line;
-            TemplateParser.parse(line, this);
-            return true;
-        } else if (isHeadwordLine(line)) {
-            rawHeadwordLine = line;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    @Override
-    public List<IWiktionaryWordForm> getWordForms() {
-        return wordForms;
-    }
-
-    @Override
-    public List<GrammaticalGender> getGenders() {
-        return genders;
-    }
-
-    @Override
-    public List<GrammaticalAspect> getAspects() {
-        return aspects;
-    }
-
-    @Override
-    public String getRawHeadwordLine() {
-        return rawHeadwordLine;
     }
 }

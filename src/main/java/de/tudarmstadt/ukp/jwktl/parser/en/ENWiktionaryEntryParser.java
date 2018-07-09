@@ -36,6 +36,7 @@ import de.tudarmstadt.ukp.jwktl.parser.en.components.ENSenseHandler;
 import de.tudarmstadt.ukp.jwktl.parser.en.components.ENTranslationHandler;
 import de.tudarmstadt.ukp.jwktl.parser.en.components.ENUsageNotesHandler;
 import de.tudarmstadt.ukp.jwktl.parser.en.components.ENWordLanguageHandler;
+import de.tudarmstadt.ukp.jwktl.parser.en.components.ENConjugationDeclensionBCSHandler;
 import de.tudarmstadt.ukp.jwktl.parser.util.ParsingContext;
 
 /**
@@ -66,6 +67,7 @@ public class ENWiktionaryEntryParser extends WiktionaryEntryParser {
 		register(new ENDescendantRelationHandler("Descendants"));
 		register(new ENTranslationHandler());
 		register(new ENEtymologyHandler());
+		register(new ENConjugationDeclensionBCSHandler());
 		register(new ENReferenceHandler());
 		register(new ENQuotationHandler());
 		register(new ENPronunciationHandler());
