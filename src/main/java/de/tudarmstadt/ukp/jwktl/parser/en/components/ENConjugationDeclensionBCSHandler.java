@@ -18,6 +18,7 @@
 package de.tudarmstadt.ukp.jwktl.parser.en.components;
 
 import de.tudarmstadt.ukp.jwktl.api.IWiktionaryWordForm;
+import de.tudarmstadt.ukp.jwktl.api.entry.WiktionaryEntry;
 import de.tudarmstadt.ukp.jwktl.api.entry.WiktionaryWordForm;
 import de.tudarmstadt.ukp.jwktl.api.util.*;
 import de.tudarmstadt.ukp.jwktl.api.util.TemplateParser.Template;
@@ -272,5 +273,11 @@ public class ENConjugationDeclensionBCSHandler extends ENBlockHandler implements
             default:
                 return false;
         }
+    }
+
+    @Override
+    public void fillContent(final ParsingContext context) {
+        WiktionaryEntry entry = context.findEntry();
+        wordForms.forEach(entry::addWordForm);
     }
 }
