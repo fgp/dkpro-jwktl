@@ -87,7 +87,7 @@ public class ENConjugationDeclensionBCSHandler extends ENBlockHandler implements
         int p = 0;
         for(GrammaticalCase c: cases) {
             for(GrammaticalNumber n: numbers) {
-                String w = template.getNumberedParam(p++);
+                String w = template.getNumberedParam(p++).trim();
                 if (w == null) {
                     logger.warning(String.format("Missing entry number %d", p));
 
@@ -107,7 +107,7 @@ public class ENConjugationDeclensionBCSHandler extends ENBlockHandler implements
             String p_raw = e.getKey();
             String[] p = p_raw.split("\\.");
             /* Create verbform object */
-            WiktionaryWordForm verbform = new WiktionaryWordForm(e.getValue());
+            WiktionaryWordForm verbform = new WiktionaryWordForm(e.getValue().trim());
             /* Set tense, person, number, aspect and gender of the verb form */
             switch(p[0]) {
                 case "pr":
@@ -212,10 +212,10 @@ public class ENConjugationDeclensionBCSHandler extends ENBlockHandler implements
 
     protected void handleAdjectiveTemplate(final Template template) {
         /* See https://en.wiktionary.org/wiki/Template:sh-adj-full */
-        String pos_stem = template.getNumberedParam(0);
-        String pos_suffix_neu = template.getNumberedParam(1);
-        String cmp_stem = template.getNumberedParam(2);
-        String cmp_suffix_neu = template.getNumberedParam(3);
+        String pos_stem = template.getNumberedParam(0).trim();
+        String pos_suffix_neu = template.getNumberedParam(1).trim();
+        String cmp_stem = template.getNumberedParam(2).trim();
+        String cmp_suffix_neu = template.getNumberedParam(3).trim();
 
         WiktionaryWordForm pos_neu_nom_sg = new WiktionaryWordForm(pos_stem + pos_suffix_neu);
         pos_neu_nom_sg.setDegree(GrammaticalDegree.POSITIVE);
