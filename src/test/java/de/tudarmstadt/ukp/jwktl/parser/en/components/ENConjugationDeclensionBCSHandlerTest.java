@@ -134,10 +134,12 @@ public class ENConjugationDeclensionBCSHandlerTest extends ENWiktionaryEntryPars
         assertEquals("provjerila", forms.get(app));
 
         /* verbal adverb */
-        VerbFormKey vn = new VerbFormKey();
-        vn.nonFiniteForm = NonFiniteForm.VERBALADVERB;
-        vn.aspect = GrammaticalAspect.PERFECT;
-        assertEquals("provjerivši", forms.get(vn));
+        VerbFormKey va = new VerbFormKey();
+        va.nonFiniteForm = NonFiniteForm.VERBALADVERB;
+        va.aspect = GrammaticalAspect.PERFECT;
+        // TODO: Normalize words by removing diacritical marks
+        // marking tone and length
+        assertEquals("provjerivši", forms.get(va));
 
     }
 }
