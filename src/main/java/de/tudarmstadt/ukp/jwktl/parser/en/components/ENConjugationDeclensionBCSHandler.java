@@ -174,11 +174,14 @@ public class ENConjugationDeclensionBCSHandler extends ENBlockHandler implements
                     }
                     break;
                 case "p":
-                    /* past (only past verbal adverb 'p.va', for pf/.sv. verbs, unenforced)
+                    /* past/perfective (only past verbal adverb 'p.va', for pf/.sv. verbs, unenforced)
                      * Key format: p.va
                      */
                     switch (p[1]) {
-                        case "va": verbform.setNonFiniteForm(NonFiniteForm.VERBALADVERB); break;
+                        case "va":
+                            verbform.setAspect(GrammaticalAspect.PERFECT);
+                            verbform.setNonFiniteForm(NonFiniteForm.VERBALADVERB);
+                            break;
                         default:
                             logger.warning(String.format("Unknown verb conjugation parameter %s", p_raw));
                             verbform = null;
