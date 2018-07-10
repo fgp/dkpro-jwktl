@@ -130,7 +130,7 @@ public class RUWiktionaryEntryParser extends WiktionaryEntryParser {
 	}
 
 	@Override
-	public IBlockHandler selectHandler(String line) {
+	public IBlockHandler selectHandler(String line, ParsingContext context) {
 		return null;
 	}
 
