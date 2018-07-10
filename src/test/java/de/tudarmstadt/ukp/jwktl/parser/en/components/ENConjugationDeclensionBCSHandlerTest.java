@@ -8,6 +8,7 @@ import de.tudarmstadt.ukp.jwktl.api.util.*;
 import de.tudarmstadt.ukp.jwktl.parser.en.ENWiktionaryEntryParserTest;
 
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Test case for {@link ENConjugationDeclensionBCSHandler}.
@@ -44,6 +45,24 @@ public class ENConjugationDeclensionBCSHandlerTest extends ENWiktionaryEntryPars
             this.person = person;
             this.gender = gender;
             this.number = number;
+        }
+
+        @Override
+        public boolean equals(Object val) {
+            if (!(val instanceof VerbFormKey))
+                return false;
+            VerbFormKey obj = (VerbFormKey)val;
+            return Objects.equals(nonFiniteForm, obj.nonFiniteForm) &&
+                   Objects.equals(tense, obj.tense) &&
+                   Objects.equals(aspect, obj.aspect) &&
+                   Objects.equals(person, obj.person) &&
+                   Objects.equals(gender, obj.gender) &&
+                   Objects.equals(number, obj.number);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(nonFiniteForm, tense, aspect, person, gender, number);
         }
     }
 
