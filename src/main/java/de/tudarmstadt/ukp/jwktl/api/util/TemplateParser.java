@@ -213,7 +213,7 @@ public /*static*/ class TemplateParser {
 		if (params.length < 1)
 			return null;
 		
-		Template result = new Template(params[0]);
+		Template result = new Template(params[0].trim());
 		int idx = -1;
 		for (String param : params) {
 			// Skip the template name.
